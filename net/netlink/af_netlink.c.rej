@@ -1,0 +1,11 @@
+--- net/netlink/af_netlink.c
++++ net/netlink/af_netlink.c
+@@ -1342,7 +1355,7 @@
+ 	if (NULL == siocb->scm)
+ 		siocb->scm = &scm;
+ 
+-	err = scm_send(sock, msg, siocb->scm);
++	err = scm_send(sock, msg, siocb->scm, true);
+ 	if (err < 0)
+ 		return err;
+ 
